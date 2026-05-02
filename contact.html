@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | NOIZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">NOIZ</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contact Main -->
+    <main class="container">
+        <h2 class="text-center">Get in Touch</h2>
+        
+        <div class="contact-wrapper">
+            <form action="#" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-control" required placeholder="Jane Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required placeholder="jane@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" class="form-control" required placeholder="Order Inquiry">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" class="form-control" required placeholder="How can we help you?"></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">Submit Message</button>
+                
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 NOIZ Audio. All rights reserved.
+    </footer>
+
+</body>
+</html>
