@@ -4,9 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOIZ | High-End Audio</title>
+    <!-- Links to the global style.css -->
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts for Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Homepage Specific Aesthetic Enhancements -->
+    <style>
+        /* Animated Scroll Indicator */
+        .hero { position: relative; }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+        .scroll-indicator svg { width: 24px; height: 24px; fill: currentColor; }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-15px) translateX(-50%); }
+            60% { transform: translateY(-7px) translateX(-50%); }
+        }
+
+        /* Enhanced Section Titles with Neon Accent */
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 12px var(--accent-color);
+        }
+
+        /* Product Badges */
+        .product-card { position: relative; }
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 30px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+            z-index: 2;
+        }
+        .badge.premium { background: #fff; color: var(--bg-color); box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); }
+
+        /* Larger Grid for Featured Gear */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 3rem;
+        }
+        .featured-grid .product-img {
+            height: 400px; /* Makes featured items stand out more */
+        }
+
+        /* Secondary Section Styling */
+        .trending-section {
+            background: linear-gradient(to bottom, var(--bg-color), #161616, var(--bg-color));
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.02);
+        }
+    </style>
 </head>
 <body>
 
@@ -25,15 +107,21 @@
         <h1>Pure Silence.<br>Absolute Sound.</h1>
         <p>Experience high-fidelity audio engineered with our latest active noise-canceling technology and premium minimalist design.</p>
         <a href="shop.html" class="btn">Shop Now</a>
+        
+        <!-- Animated down arrow -->
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </div>
     </header>
 
-    <!-- Featured Products -->
+    <!-- Featured Products Section (3 Items) -->
     <main class="container">
-        <h2 class="text-center">Featured Gear</h2>
-        <section class="product-grid">
+        <h2 class="section-title">Featured Gear</h2>
+        <section class="featured-grid">
             
-            <!-- Product Card 1 -->
+            <!-- Featured Product 1 -->
             <article class="product-card">
+                <div class="badge">Bestseller</div>
                 <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Noiz Pro X" class="product-img">
                 <div class="product-info">
                     <h3>Noiz Pro X</h3>
@@ -42,28 +130,148 @@
                 </div>
             </article>
 
-            <!-- Product Card 2 -->
+            <!-- Featured Product 2 -->
             <article class="product-card">
-                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80" alt="Noiz Studio" class="product-img">
+                <div class="badge premium">Premium</div>
+                <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=800&q=80" alt="Noiz Phantom" class="product-img">
                 <div class="product-info">
-                    <h3>Noiz Studio</h3>
-                    <div class="product-price">$299.00</div>
+                    <h3>Noiz Phantom</h3>
+                    <div class="product-price">$599.00</div>
                     <a href="product-details.html" class="btn btn-outline">View Details</a>
                 </div>
             </article>
 
-            <!-- Product Card 3 -->
+            <!-- Featured Product 3 -->
             <article class="product-card">
-                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80" alt="Noiz Lite" class="product-img">
+                <div class="badge">New</div>
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80" alt="Noiz Horizon" class="product-img">
                 <div class="product-info">
-                    <h3>Noiz Lite</h3>
-                    <div class="product-price">$199.00</div>
+                    <h3>Noiz Horizon</h3>
+                    <div class="product-price">$449.00</div>
                     <a href="product-details.html" class="btn btn-outline">View Details</a>
                 </div>
             </article>
 
         </section>
     </main>
+
+    <!-- Trending Collection Section (12 Items to equal 15 total) -->
+    <section class="trending-section">
+        <div class="container">
+            <h2 class="section-title">Trending Collection</h2>
+            <div class="product-grid">
+                
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80" alt="Noiz Studio" class="product-img">
+                    <div class="product-info">
+                        <h3>Noiz Studio</h3>
+                        <div class="product-price">$299.00</div>
+                        <a href="product-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=800&q=80" alt="Noiz Lite" class="product-img">
+                    <div class="product-info">
+                        <h3>Noiz Lite</h3>
+                        <div class="product-price">$199.00</div>
+                        <a href="product-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Noiz Buds" class="product-img">
+                    <div class="product-info">
+                        <h3>Noiz Buds</h3>
+                        <div class="product-price">$149.00</div>
+                        <a href="product-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=800&q=80" alt="Noiz Pro Y" class="product-img">
+                    <div class="product-info">
+                        <h3>Noiz Pro Y</h3>
+                        <div class="product-price">$369.00</div>
+                        <a href="product-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80" alt="Noiz Elite" class="product-img">
+                    <div class="product-info">
+                        <h3>Noiz Elite</h3>
+                        <div class="product-price">$499.00</div>
+                        <a href="product-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80" alt="Noiz Flow" class="product-img">
+                    <div class="product-info">
+                        <h3>Noiz Flow</h3>
+                        <div class="product-price">$249.00</div>
+                        <a href="product-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=800&q=80" alt="Noiz Pulse" class="product-img">
+                    <div class="product-info">
+                        <h3>Noiz Pulse</h3>
+                        <div class="product-price">$179.00</div>
+                        <a href="product-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Noiz Aura" class="product-img">
+                    <div class="product-info">
+                        <h3>Noiz Aura</h3>
+                        <div class="product-price">$429.00</div>
+                        <a href="product-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=800&q=80" alt="Noiz Echo" class="product-img">
+                    <div class="product-info">
+                        <h3>Noiz Echo</h3>
+                        <div class="product-price">$129.00</div>
+                        <a href="product-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80" alt="Noiz Vertex" class="product-img">
+                    <div class="product-info">
+                        <h3>Noiz Vertex</h3>
+                        <div class="product-price">$299.00</div>
+                        <a href="product-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80" alt="Noiz Nova" class="product-img">
+                    <div class="product-info">
+                        <h3>Noiz Nova</h3>
+                        <div class="product-price">$349.00</div>
+                        <a href="product-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=800&q=80" alt="Noiz Stealth" class="product-img">
+                    <div class="product-info">
+                        <h3>Noiz Stealth</h3>
+                        <div class="product-price">$379.00</div>
+                        <a href="product-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
 
     <footer>
         &copy; 2026 NOIZ Audio. All rights reserved.
